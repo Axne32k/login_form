@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <hea= lang="en">
+<head>
+   <meta charset="UTF-8">
+    <meta http-equiv="X<UA-Compatible" content="IE-edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+   <title>axne.gmr.in </title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+</head>
+
+<body>
+  
+ <header>
+   
+   <h1 class="axne"> Axne</h1>
+     <nav class="navigation">
+        <a href="/index 2.html">Home</a>
+       <a href="/index 2.html">About</a>
+    <a href=/about.html>Contact</a>
+<button  onclick="toggleLoginForm()"   class="btnlogin-popup"> Login</button>
+</nav>
+ </header>
+
+
+<div  class="wrapper active-popup">
+<i id="resetInput"  class="fa-solid fa-square-xmark icon-close"></i>
+     <div  class="form-box login">
+       <h2>Login</h2>
+ <form action="#"  id="myForm"   name="login-form" novalidate>
+             
+          
+          
+  <div class="input-box">
+ <span  id="emailIcon"><i class="fa-solid fa-envelope"></i></span>
+
+ <input type="email" class="email-box" id="emailInput" name="Email"  value="" onchange="this.setAttribute('value',this.value)" autocomplete="email">
+
+
+  <label class="label" for="email">Email</label>
+      </div>
+      
+          
+    <div class="input-box input-box-password">
+ <span  id="hide1" class="icon" 
+onclick="myFunction()">
+<i Class="fa-solid fa-unlock"></i>
+      <div class="hole2"></div>
+</span>
+ <span  id="hide2" class="icon"
+ onclick="myFunction()">
+  <i Class="fa-solid fa-lock"></i>
+      <div class="hole1"></div>
+    <div class="hole2"></div>
+ </span>    
+
+
+<input type="password" id="pswInput" class="red-box" name="psw"  value="" onchange="this.setAttribute('value',this.value)" autocomplete="current-password">
+ <label class="label" for="psw">Password</label>
+       </div> 
+     
+      <div class="remember-forget">
+        <label><input type="checkbox" checked="checked" name="remember"> Remember me</label>
+        <a href="#">Forgot Password?</a>
+      </div>
+      
+<button type="submit"id="submitButton"   class="btn">Login</button>
+      
+       <div class="login-register">
+         <p>Don't have an account?<a href="#" class="register-link">Register</a></p>
+       </div>
+           
+       </form>
+     </div>
+ 
+<div class="form-box register">
+   <h2>Register</h2>
+       <form action="#">
+         <div class="input-box">
+          <span class="icon"><ion-icon name="person"></ion-icon></span></span>
+          <input type="text"required>
+        <label for="username">Username</label>
+     </div>
+      
+  <div class="input-box">
+     <span class="icon"><ion-icon name="mail"></ion-icon></span>
+       <input type="email" required>
+    <label for="email">Email</label>
+  </div>
+          
+  <div class="input-box">
+     <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+         <input type="password"required>
+           <label for="password">Password</label>
+      </div> 
+     
+  <div class="remember-forget">
+    <label><input type="checkbox" required> aggree to the terms & conditions</label>
+    </div>
+      
+  <button type="submit" class="btn">Register</button>
+    <div class="login-register">
+      <p>Already have an account?<a href="#" class="login-link">Login</a></p>
+          </div>
+       </form>
+      </div>
+  </div>
+ 
+   
+   
+   
+  <script defer src=/script.js></script>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+
+<script>
+function myFunction() {
+  var x = document.getElementById("pswInput");
+var y = document.getElementById("hide1");
+var z = document.getElementById("hide2");
+
+if(x.type === 'password') {
+
+x.type = "text";
+y.style.display = "block";
+z.style.display = "none";
+
+}
+else{
+
+x.type = "password";
+y.style.display = "none";
+z.style.display = "block";
+
+}
+
+}
+
+</script>
+
+
+
+  
+</body>
+  </html>
+     
