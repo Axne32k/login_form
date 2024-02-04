@@ -1,5 +1,4 @@
 // close-icon reset datab of  input 
-
     document.getElementById("resetInput").addEventListener("click", function() {
         // Reload the page
         location.reload();
@@ -10,7 +9,6 @@
  const emailInput = document.getElementById('emailInput');
 const emailIcon = document.getElementById('emailIcon');
 const icon = document.querySelector('.icon');
-
 const inputBox = document.querySelector('.input-box');
 
 emailInput.addEventListener('input', validateEmail);
@@ -22,6 +20,29 @@ const isValidEmail = emailPattern.test(emailInput.value);
  inputBox.classList.remove('invalid', 'valid');
   inputBox.classList.add(isValidEmail ? 'valid' : 'invalid');
  }; 
+
+// login form lock icon hide & show 
+function myFunction() {
+  var x = document.getElementById("pswInput");
+var y = document.getElementById("hide1");
+var z = document.getElementById("hide2");
+
+if(x.type === 'password') {
+
+x.type = "text";
+y.style.display = "block";
+z.style.display = "none";
+
+}
+else{
+
+x.type = "password";
+y.style.display = "none";
+z.style.display = "block";
+
+}
+
+}
 
 
 //  red  lock validation
@@ -163,8 +184,7 @@ function toggleLoginForm() {
 }  
   
 
-
-
+// hide  & show  wrapper on click outside 
 document.addEventListener('click', function(event) {
   const wrapper = document.querySelector('.wrapper.active-popup');
   const button = document.querySelector('button');
@@ -178,4 +198,67 @@ document.addEventListener('click', function(event) {
     }
   }
 });
+
+
+
+//---------------------------------//
+
+// Register email validation
+const registerEmailInput = document.getElementById('registerEmailInput');
+const registerEmailIcon = document.getElementById('registerEmailIcon');
+const inputBoxEmail = document.querySelector('.input-box-email');
+
+registerEmailInput.addEventListener('input', validateRegisterEmail);
+
+function validateRegisterEmail() {
+   const emailPattern = /^$|^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+   const isValidEmail = emailPattern.test(registerEmailInput.value);
+
+   inputBoxEmail.classList.remove('invalid', 'valid');
+   inputBoxEmail.classList.add(isValidEmail ? 'valid' : 'invalid');
+}
+
+
+// Register password validation
+const registerPasswordInput = document.getElementById('registerPswInput');
+const registerPasswordIcon1 = document.getElementById('registerHide1');
+const registerPasswordIcon2 = document.getElementById('registerHide2');
+
+registerPasswordInput.addEventListener('input', validateRegisterPassword);
+
+function validateRegisterPassword() {
+   const passwordPattern = /^$|^.{8,}$/;
+   const isValidPassword = passwordPattern.test(registerPasswordInput.value);
+
+   const inputBoxPassword = document.querySelector('.form-box.register .input-box-password');
+
+   inputBoxPassword.classList.remove('invalid', 'valid');
+   inputBoxPassword.classList.add(isValidPassword ? 'valid' : 'invalid');
+}
+
+
+
+// register form lock icon hide & show 
+
+function  registerLock() {
+  var x = document.getElementById("registerPswInput");
+var y = document.getElementById("registerHide1");
+var z = document.getElementById("registerHide2");
+
+if(x.type === 'password') {
+
+x.type = "text";
+y.style.display = "block";
+z.style.display = "none";
+
+}
+else{
+
+x.type = "password";
+y.style.display = "none";
+z.style.display = "block";
+
+}
+
+}
 

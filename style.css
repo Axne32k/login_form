@@ -200,7 +200,11 @@
   #hide1{
     display: none;
   }
-
+  
+    #registerHide1{
+      display: none;
+    }
+    
   .input-box label {
     position: absolute;
     top: 55%;
@@ -393,3 +397,24 @@
  
   
 
+   /*----------register---------*/
+
+
+.input-box-email.invalid #registerEmailIcon {
+   color: #FF0000;
+}
+
+
+.input-box-email.valid #registerEmailIcon {
+   color: #000000;
+}
+
+
+.form-box.register .input-box-password.invalid .icon {
+   color: #FF0000;
+}
+
+
+.form-box.register .input-box-password.valid .icon {
+   color: #000000;
+}

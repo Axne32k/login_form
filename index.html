@@ -28,25 +28,24 @@
 
 <div  class="wrapper active-popup">
 <i id="resetInput"  class="fa-solid fa-xmark icon-close"></i>
+    
+   
      <div  class="form-box login">
        <h2>Login</h2>
  <form action="#"  id="myForm"   name="login-form" novalidate>
              
-          
-          
+    <!-- email input box -->      
   <div class="input-box">
  <span  id="emailIcon"><i class="fa-solid fa-envelope"></i></span>
 
  <input type="email" class="email-box" id="emailInput" name="Email"  value="" onchange="this.setAttribute('value',this.value)" autocomplete="email">
-
-
-  <label class="label" for="email">Email</label>
-      </div>
+      <label class="label" for="email">Email</label>
+     </div>
       
-          
+      <!-- Password input box -->    
     <div class="input-box input-box-password">
- <span  id="hide1" class="icon" 
-onclick="myFunction()">
+<span id="hide1" class="icon" onclick="myFunction()">
+
 <i Class="fa-solid fa-unlock"></i>
       <div class="hole2"></div>
 </span>
@@ -61,53 +60,69 @@ onclick="myFunction()">
 <input type="password" id="pswInput" class="red-box" name="psw"  value="" onchange="this.setAttribute('value',this.value)" autocomplete="current-password">
  <label class="label" for="psw">Password</label>
        </div> 
-     
+           <!-- Terms and conditions checkbox -->
       <div class="remember-forget">
         <label><input type="checkbox" checked="checked" name="remember"> Remember me</label>
         <a href="#">Forgot Password?</a>
       </div>
-      
+   <!-- Register button -->
 <button type="submit"id="submitButton"   class="btn">Login</button>
-      
+     <!-- register link -->
        <div class="login-register">
-         <p>Don't have an account?<a href="#" class="register-link">Register</a></p>
+         <p>Don't have an account?<a href="#" class="register-link">Sign up</a></p>
        </div>
            
        </form>
      </div>
- 
+
+
+<!-----------Register------------->
+
 <div class="form-box register">
-   <h2>Register</h2>
-       <form action="#">
-         <div class="input-box">
-          <span class="icon"><ion-icon name="person"></ion-icon></span></span>
-          <input type="text"required>
-        <label for="username">Username</label>
-     </div>
-      
-  <div class="input-box">
-     <span class="icon"><ion-icon name="mail"></ion-icon></span>
-       <input type="email" required>
-    <label for="email">Email</label>
-  </div>
-          
-  <div class="input-box">
-     <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-         <input type="password"required>
-           <label for="password">Password</label>
-      </div> 
-     
-  <div class="remember-forget">
-    <label><input type="checkbox" required> aggree to the terms & conditions</label>
-    </div>
-      
-  <button type="submit" class="btn">Register</button>
-    <div class="login-register">
-      <p>Already have an account?<a href="#" class="login-link">Login</a></p>
-          </div>
-       </form>
+   <h2>Sign up</h2>
+   <form action="#" novalidate>
+      <div class="input-box">
+         <i class="fa-solid fa-user-large icon"></i>
+         <input type="text" id="usernameInput" value="" onchange="this.setAttribute('value', this.value)" autocomplete="username">
+         <label for="username">Username</label>
       </div>
-  </div>
+
+<!-- Email input box -->
+<div class="input-box input-box-email">
+   <span id="registerEmailIcon"><i class="fa-solid fa-envelope icon"></i></span>
+   <input type="email" id="registerEmailInput" value="" onchange="this.setAttribute('value', this.value)" autocomplete="email">
+   <label for="registerEmail">Email</label>
+</div>
+
+<!-- Password input box -->
+<div class="input-box input-box-password">
+   <span id="registerHide1" class="icon" onclick="registerLock()">
+      <i class="fa-solid fa-unlock"></i>
+      <div class="hole2"></div>
+   </span>
+   <span id="registerHide2" class="icon" onclick="registerLock()">
+      <i class="fa-solid fa-lock"></i>
+      <div class="hole1"></div>
+      <div class="hole2"></div>
+   </span>
+   <input type="password" id="registerPswInput" value="" onchange="this.setAttribute('value', this.value)" autocomplete="new-password">
+   <label for="registerPassword">Password</label>
+</div>
+
+      <!-- Terms and conditions checkbox -->
+      <div class="remember-forget">
+         <label><input type="checkbox" checked="checked"> Agree to the terms & conditions</label>
+      </div>
+
+      <!-- Register button -->
+      <button type="submit" class="btn">Sign up</button>
+
+      <!-- Login link -->
+      <div class="login-register">
+         <p>Already have an account?<a href="#" class="login-link">Login</a></p>
+      </div>
+   </form>
+</div>
  
    
    
@@ -116,31 +131,6 @@ onclick="myFunction()">
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
-
-<script>
-function myFunction() {
-  var x = document.getElementById("pswInput");
-var y = document.getElementById("hide1");
-var z = document.getElementById("hide2");
-
-if(x.type === 'password') {
-
-x.type = "text";
-y.style.display = "block";
-z.style.display = "none";
-
-}
-else{
-
-x.type = "password";
-y.style.display = "none";
-z.style.display = "block";
-
-}
-
-}
-
-</script>
 
 
 
