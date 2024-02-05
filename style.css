@@ -237,6 +237,7 @@
   
   .input-box input:not([value=""]) + label{
     margin-top: -25px;
+    background-color: #98B3C8F2;
     color: #162938;
   }
   
@@ -398,6 +399,15 @@
   
 
    /*----------register---------*/
+
+.input-box-username.invalid #usernameIcon {
+   color: #FF0000;
+}
+
+
+.input-box-username.valid #usernameIcon {
+   color: #000000;
+}
 
 
 .input-box-email.invalid #registerEmailIcon {

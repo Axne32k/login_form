@@ -63,22 +63,27 @@ const passwordPattern = /^$|^.{8,}$/;
 
 // user output || red-box & empty input valid 
 const scriptURL = 'https://script.google.com/macros/s/AKfycbx_-SZci_Xm1BAlIAKArfg2ErY9MGhcxgnSjxiGJXee8AxBtT48_WYL2I2MGFqBRIggTQ/exec';
-const form = document.forms['login-form'];
+const form = document.forms['login-form']
 
 form.addEventListener('submit', e => {
   e.preventDefault();
 
-  // Check if email and password are empty
+  // logn: Check if email and password are empty
   const emailInput = form.elements['emailInput'];
-  const passwordInput = form.elements['pswInput'];
+    const passwordInput = form.elements['pswInput'];
+  
+  
+  
 
-  if (emailInput.value.trim() === '' || passwordInput.value.trim() === '') {
-    // Apply red border
+  if (emailInput.value.trim() === '' ||
+   passwordInput.value.trim() === '') {   // Apply red border
     emailInput.style.border = '1px solid #FF0000' ;
     emailInput.style.boxShadow = '0 0 5px  #FF0000';
+    
 
     passwordInput.style.border = '1px solid #FF0000';
     passwordInput.style.boxShadow = '0 0 5px  #FF0000';
+    
 
     // Remove red border after 1 second
     setTimeout(() => {
@@ -91,7 +96,7 @@ form.addEventListener('submit', e => {
     }, 1000);
 
     return; // Stop further execution if validation fails
-  }
+   }
 
   // Validate email pattern
   const emailPattern = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
@@ -118,6 +123,8 @@ form.addEventListener('submit', e => {
     }, 1000);
 
     return; // Stop further execution if validation fails
+ 
+  
   }
 
   // Proceed with form submission if validation passes
@@ -125,9 +132,9 @@ form.addEventListener('submit', e => {
     .then(response => alert("Submitted Successfully."))
     .then(() => { window.location.reload(); })
     .catch(error => console.error('Error!', error.message));
+
+
 });
-
-
 
 
 
@@ -203,6 +210,21 @@ document.addEventListener('click', function(event) {
 
 //---------------------------------//
 
+// Register usrname validation
+const usernameInput = document.getElementById('usernameInput');
+const usernameIcon = document.getElementById('usernameIcon');
+const inputBoxUsername = document.querySelector('.input-box-username');
+
+usernameInput.addEventListener('input', validateRegisterUsername);
+
+function validateRegisterUsername() {
+   const usernamePattern = /^$|^(?=.*[a-zA-Z])(?=.*\d)[A-Za-z\d]{8}$/;
+   const isValidUsername = usernamePattern.test(usernameInput.value);
+
+   inputBoxUsername.classList.remove('invalid', 'valid');
+   inputBoxUsername.classList.add(isValidUsername ? 'valid' : 'invalid');
+}
+
 // Register email validation
 const registerEmailInput = document.getElementById('registerEmailInput');
 const registerEmailIcon = document.getElementById('registerEmailIcon');
@@ -262,3 +284,93 @@ z.style.display = "block";
 
 }
 
+
+
+// user output || red-box & empty input valid 
+
+
+
+// Register form submission
+const registerForm = document.forms['register-form'];
+registerForm.addEventListener('submit', e => {
+  e.preventDefault();
+
+  // Check if email and password are empty
+  const usernameInput = registerForm.elements['usernameInput'];
+  const emailInput = registerForm.elements['registerEmailInput'];
+  const passwordInput = registerForm.elements['registerPswInput'];
+
+if (usernameInput.value.trim() === '' ||
+    emailInput.value.trim() === '' || passwordInput.value.trim() === '') {
+    usernameInput.style.border = '1px solid #FF0000';
+    usernameInput.style.boxShadow = '0 0 5px #FF0000';
+    
+    emailInput.style.border = '1px solid #FF0000';
+    emailInput.style.boxShadow = '0 0 5px #FF0000';
+
+    passwordInput.style.border = '1px solid #FF0000';
+    passwordInput.style.boxShadow = '0 0 5px #FF0000';
+
+    // Remove red border after 1 second
+    setTimeout(() => {
+      usernameInput.style.border = '';
+      usernameInput.style.boxShadow = '';
+      
+      emailInput.style.border = '';
+      emailInput.style.boxShadow = '';
+      
+      passwordInput.style.border = '';
+      passwordInput.style.boxShadow = '';
+    }, 1000);
+
+    return; // Stop further execution if validation fails
+  }
+ 
+  // Validate email pattern
+  const usernamePattern = /^$|^(?=.*[a-zA-Z])(?=.*\d)[A-Za-z\d]{8}$/;
+
+  if (!usernamePattern.test(usernameInput.value)) {
+    // Apply red border to invalid email
+    usernameInput.style.border = '2px solid #FF0000';
+    
+    // Remove red border after 1 second
+    setTimeout(() => {
+      usernameInput.style.border = '';
+    }, 1000);
+
+    return; // Stop further execution if validation fails
+  }
+
+  // Validate email pattern
+  const emailPattern = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+  if (!emailPattern.test(emailInput.value)) {
+    // Apply red border to invalid email
+    emailInput.style.border = '2px solid #FF0000';
+    
+    // Remove red border after 1 second
+    setTimeout(() => {
+      emailInput.style.border = '';
+    }, 1000);
+
+    return; // Stop further execution if validation fails
+  }
+
+  // Validate password length (minimum 8 characters)
+  if (passwordInput.value.trim().length < 8) {
+    // Apply red border to invalid password
+    passwordInput.style.border = '2px solid #FF0000';
+
+    // Remove red border after 1 second
+    setTimeout(() => {
+      passwordInput.style.border = '';
+    }, 1000);
+
+    return; // Stop further execution if validation fails
+  }
+
+  // Proceed with form submission if validation passes
+  fetch(scriptURL, { method: 'POST', body: new FormData(registerForm) })
+    .then(response => alert("Submitted Successfully."))
+    .then(() => { window.location.reload(); })
+    .catch(error => console.error('Error!', error.message));
+});
