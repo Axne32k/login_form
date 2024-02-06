@@ -218,7 +218,8 @@ const inputBoxUsername = document.querySelector('.input-box-username');
 usernameInput.addEventListener('input', validateRegisterUsername);
 
 function validateRegisterUsername() {
-   const usernamePattern = /^$|^(?=.*[a-zA-Z])(?=.*\d)[A-Za-z\d]{8}$/;
+   const usernamePattern = /^$|^(?=.*[a-zA-Z])(?=.*\d)[A-Za-z\d ]{8,12}$/;
+
    const isValidUsername = usernamePattern.test(usernameInput.value);
 
    inputBoxUsername.classList.remove('invalid', 'valid');
@@ -327,7 +328,7 @@ if (usernameInput.value.trim() === '' ||
   }
  
   // Validate email pattern
-  const usernamePattern = /^$|^(?=.*[a-zA-Z])(?=.*\d)[A-Za-z\d]{8}$/;
+  const usernamePattern = /^$|^(?=.*[a-zA-Z])(?=.*\d)[A-Za-z\d ]{8,12}$/;
 
   if (!usernamePattern.test(usernameInput.value)) {
     // Apply red border to invalid email
@@ -367,10 +368,10 @@ if (usernameInput.value.trim() === '' ||
 
     return; // Stop further execution if validation fails
   }
-
   // Proceed with form submission if validation passes
   fetch(scriptURL, { method: 'POST', body: new FormData(registerForm) })
     .then(response => alert("Submitted Successfully."))
     .then(() => { window.location.reload(); })
     .catch(error => console.error('Error!', error.message));
+
 });
