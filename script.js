@@ -62,7 +62,7 @@ const passwordPattern = /^$|^.{8,}$/;
 
 
 // user output || red-box & empty input valid 
-const scriptURL = 'https://script.google.com/macros/s/AKfycbx_-SZci_Xm1BAlIAKArfg2ErY9MGhcxgnSjxiGJXee8AxBtT48_WYL2I2MGFqBRIggTQ/exec'
+const scriptURL ='https://script.google.com/macros/s/AKfycbwhwTfWSEjLRErhf3Fx4sYMx8YmfYUV80JCfPSFNwLUPcNJfj05z6kIYRUr6qabccmn/exec'
 const form = document.forms['login-form']
 
 form.addEventListener('submit', e => {
@@ -128,9 +128,7 @@ form.addEventListener('submit', e => {
   fetch(scriptURL, { method: 'POST', body: new FormData(form) })
     .then(response => alert("Submitted Successfully."))
     .then(() => { window.location.reload(); })
-    .catch(error => console.error('Error!', error.message));
-
-
+    .catch(error => console.error('Error!', error.message))
 });
 
 
@@ -366,9 +364,8 @@ if (usernameInput.value.trim() === '' ||
     return; // Stop further execution if validation fails
   }
   // Proceed with form submission if validation passes
-  fetch(scriptURL, { method: 'POST', body: new FormData(registerForm) })
+  fetch(scriptURL, { method: 'POST', body: new FormData(form) })
     .then(response => alert("Submitted Successfully."))
     .then(() => { window.location.reload(); })
     .catch(error => console.error('Error!', error.message))
-
 });
