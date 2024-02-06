@@ -62,7 +62,7 @@ const passwordPattern = /^$|^.{8,}$/;
 
 
 // user output || red-box & empty input valid 
-const scriptURL = 'https://script.google.com/macros/s/AKfycbx_-SZci_Xm1BAlIAKArfg2ErY9MGhcxgnSjxiGJXee8AxBtT48_WYL2I2MGFqBRIggTQ/exec';
+const scriptURL = 'https://script.google.com/macros/s/AKfycbx_-SZci_Xm1BAlIAKArfg2ErY9MGhcxgnSjxiGJXee8AxBtT48_WYL2I2MGFqBRIggTQ/exec'
 const form = document.forms['login-form']
 
 form.addEventListener('submit', e => {
@@ -72,9 +72,6 @@ form.addEventListener('submit', e => {
   const emailInput = form.elements['emailInput'];
     const passwordInput = form.elements['pswInput'];
   
-  
-  
-
   if (emailInput.value.trim() === '' ||
    passwordInput.value.trim() === '') {   // Apply red border
     emailInput.style.border = '1px solid #FF0000' ;
@@ -372,6 +369,6 @@ if (usernameInput.value.trim() === '' ||
   fetch(scriptURL, { method: 'POST', body: new FormData(registerForm) })
     .then(response => alert("Submitted Successfully."))
     .then(() => { window.location.reload(); })
-    .catch(error => console.error('Error!', error.message));
+    .catch(error => console.error('Error!', error.message))
 
 });
