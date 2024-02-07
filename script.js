@@ -4,7 +4,45 @@
         location.reload();
     });
 
+// Get the sign-up button element
+const signUpButton = document.querySelector('.register-link');
 
+// Add event listener to the sign-up button
+signUpButton.addEventListener('click', function(event) {
+  // Prevent the default form submission behavior
+  event.preventDefault();
+
+  // Clear the input fields in the login form
+  const loginEmailInput = document.getElementById('emailInput');
+  const loginPasswordInput = document.getElementById('pswInput');
+  loginEmailInput.value = '';
+  loginPasswordInput.value = '';
+
+  // Reset the styles of email and password input boxes
+  const emailInputBox = document.querySelector('.input-box');
+  const passwordInputBox = document.querySelector('.input-box-password');
+  emailInputBox.classList.remove('valid', 'invalid');
+  passwordInputBox.classList.remove('valid', 'invalid');
+
+  // Reset the styles of email and password icons
+  const emailIcon = document.getElementById('emailIcon');
+  const passwordIcon1 = document.getElementById('hide1');
+  const passwordIcon2 = document.getElementById('hide2');
+  emailIcon.style.color = '';
+  passwordIcon1.style.color = '';
+  passwordIcon2.style.color = '';
+
+  // Reset the styles of email and password labels
+  const emailLabel = document.querySelector('.input-box label[for="email"]');
+  const passwordLabel = document.querySelector('.input-box-password label[for="psw"]');
+  emailLabel.style.marginTop = '';
+  passwordLabel.style.marginTop = '';
+  
+  // Reload the page after clearing the input fields
+  
+});
+
+    
 // red email  validation 
  const emailInput = document.getElementById('emailInput');
 const emailIcon = document.getElementById('emailIcon');
@@ -62,7 +100,7 @@ const passwordPattern = /^$|^.{8,}$/;
 
 
 // user output || red-box & empty input valid 
-const scriptURL ='https://script.google.com/macros/s/AKfycbwhwTfWSEjLRErhf3Fx4sYMx8YmfYUV80JCfPSFNwLUPcNJfj05z6kIYRUr6qabccmn/exec'
+const scriptURL = 'https://script.google.com/macros/s/AKfycbwjcVDRp8kWq-Obl9SwDhsBD_yuSg5fYen_DES7SJZ3YK4xTuxXFJGAfyIMtmcYhjCv/exec'
 const form = document.forms['login-form']
 
 form.addEventListener('submit', e => {
@@ -71,7 +109,7 @@ form.addEventListener('submit', e => {
   // logn: Check if email and password are empty
   const emailInput = form.elements['emailInput'];
     const passwordInput = form.elements['pswInput'];
-  
+
   if (emailInput.value.trim() === '' ||
    passwordInput.value.trim() === '') {   // Apply red border
     emailInput.style.border = '1px solid #FF0000' ;
@@ -128,7 +166,9 @@ form.addEventListener('submit', e => {
   fetch(scriptURL, { method: 'POST', body: new FormData(form) })
     .then(response => alert("Submitted Successfully."))
     .then(() => { window.location.reload(); })
-    .catch(error => console.error('Error!', error.message))
+    .catch(error => console.error('Error!', error.message));
+
+
 });
 
 
@@ -148,7 +188,7 @@ form.addEventListener('submit', e => {
     .catch(error => console.error('Error!', error.message))
 }) */
 
-// selecting  of  class  aniamtion & class
+// selecting  of  class  animation & class
 const wrapper = document.querySelector('.wrapper');
 
 const loginLink = document.querySelector('.login-link');
@@ -213,8 +253,7 @@ const inputBoxUsername = document.querySelector('.input-box-username');
 usernameInput.addEventListener('input', validateRegisterUsername);
 
 function validateRegisterUsername() {
-   const usernamePattern = /^$|^(?=.*[a-zA-Z])(?=.*\d)[A-Za-z\d ]{8,12}$/;
-
+   const usernamePattern = /^$|^(?=.*[a-zA-Z])(?=.*\d)[A-Za-z\d]{8}$/;
    const isValidUsername = usernamePattern.test(usernameInput.value);
 
    inputBoxUsername.classList.remove('invalid', 'valid');
@@ -323,7 +362,7 @@ if (usernameInput.value.trim() === '' ||
   }
  
   // Validate email pattern
-  const usernamePattern = /^$|^(?=.*[a-zA-Z])(?=.*\d)[A-Za-z\d ]{8,12}$/;
+  const usernamePattern = /^$|^(?=.*[a-zA-Z])(?=.*\d)[A-Za-z\d]{8}$/;
 
   if (!usernamePattern.test(usernameInput.value)) {
     // Apply red border to invalid email
@@ -363,9 +402,10 @@ if (usernameInput.value.trim() === '' ||
 
     return; // Stop further execution if validation fails
   }
+
   // Proceed with form submission if validation passes
-  fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+  fetch(scriptURL, { method: 'POST', body: new FormData(registerForm) })
     .then(response => alert("Submitted Successfully."))
     .then(() => { window.location.reload(); })
-    .catch(error => console.error('Error!', error.message))
+    .catch(error => console.error('Error!', error.message));
 });
