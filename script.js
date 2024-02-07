@@ -405,7 +405,7 @@ if (usernameInput.value.trim() === '' ||
 
   // Proceed with form submission if validation passes
   fetch(scriptURL, { method: 'POST', body: new FormData(registerForm) })
-    .then(response => alert("Submitted Successfully."))
+    .then(response => alert("Submitted Successfull."))
     .then(() => { window.location.reload(); })
     .catch(error => console.error('Error!', error.message));
 });
