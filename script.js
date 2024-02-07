@@ -101,7 +101,7 @@ const passwordPattern = /^$|^.{8,}$/;
 
 // user output || red-box & empty input valid 
 const scriptURL = 'https://script.google.com/macros/s/AKfycbwjcVDRp8kWq-Obl9SwDhsBD_yuSg5fYen_DES7SJZ3YK4xTuxXFJGAfyIMtmcYhjCv/exec'
-const form = document.forms['login-form']
+const form = document.forms['login-register-form']
 
 form.addEventListener('submit', e => {
   e.preventDefault();
@@ -253,7 +253,7 @@ const inputBoxUsername = document.querySelector('.input-box-username');
 usernameInput.addEventListener('input', validateRegisterUsername);
 
 function validateRegisterUsername() {
-   const usernamePattern = /^$|^(?=.*[a-zA-Z])(?=.*\d)[A-Za-z\d]{8}$/;
+   const usernamePattern = /^$|^(?=.*[a-zA-Z])(?=.*\d)[A-Za-z\d ]{8,12}$/;
    const isValidUsername = usernamePattern.test(usernameInput.value);
 
    inputBoxUsername.classList.remove('invalid', 'valid');
@@ -362,7 +362,7 @@ if (usernameInput.value.trim() === '' ||
   }
  
   // Validate email pattern
-  const usernamePattern = /^$|^(?=.*[a-zA-Z])(?=.*\d)[A-Za-z\d]{8}$/;
+  const usernamePattern = /^$|^(?=.*[a-zA-Z])(?=.*\d)[A-Za-z\d ]{8,12}$/;
 
   if (!usernamePattern.test(usernameInput.value)) {
     // Apply red border to invalid email
