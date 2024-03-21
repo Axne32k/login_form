@@ -253,7 +253,7 @@ const inputBoxUsername = document.querySelector('.input-box-username');
 usernameInput.addEventListener('input', validateRegisterUsername);
 
 function validateRegisterUsername() {
-   const usernamePattern = /^$|^(?=.*[a-zA-Z])(?=.*\d)[A-Za-z\d ]{8,12}$/;
+   const usernamePattern = /^$|^(?=.*[a-zA-Z])(?=.*\d)[A-Za-z\d ]{8,16}$/;
    const isValidUsername = usernamePattern.test(usernameInput.value);
 
    inputBoxUsername.classList.remove('invalid', 'valid');
@@ -362,7 +362,7 @@ if (usernameInput.value.trim() === '' ||
   }
  
   // Validate email pattern
-  const usernamePattern = /^$|^(?=.*[a-zA-Z])(?=.*\d)[A-Za-z\d ]{8,12}$/;
+  const usernamePattern = /^$|^(?=.*[a-zA-Z])(?=.*\d)[A-Za-z\d ]{8,16}$/;
 
   if (!usernamePattern.test(usernameInput.value)) {
     // Apply red border to invalid email
