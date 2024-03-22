@@ -33,12 +33,11 @@
     font-variant: small-caps;
   }
  
-  h2 {
+  h2 svg {
     user-select: none;
     text-shadow:2px 2px 4px #ffffff;
-    font-size: 50px;
-    font-family: arial;
-    font-weight: 700; 
+    height: 70px;
+    width: 70px;
   }
   
  
