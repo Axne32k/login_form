@@ -206,9 +206,7 @@ btnPopup.addEventListener('click', ()=>{
  wrapper.classList.add('active-popup');
 });
 iconClose.addEventListener('click', ()=>{
-setTimeout(() => { 
-  wrapper.classList.remove('active-popup');  
-  }, 0);
+ wrapper.classList.remove('active-popup');
  });
 
 // login show & hide wrappper
@@ -223,7 +221,7 @@ function toggleLoginForm() {
     }
     
   }  
-}  
+ };  
   
 
 // hide  & show  wrapper on click outside 
