@@ -1,4 +1,18 @@
-// close-icon reset datab of  input 
+// perfect apepar for login  loading spinner
+document.getElementById('myForm').addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent default form submission
+  
+  // Show the spinner
+  document.getElementById('spinnerContainer').style.display = 'block';
+  
+  setTimeout(function() {
+    // Hide the spinner after some time (Simulating processing)
+    document.getElementById('spinnerContainer').style.display = 'none';
+  }, 3000); // Change 2000 to the actual processing time of your form
+});
+
+
+// close-icon reset data  of  input 
     document.getElementById("resetInput").addEventListener("click", function() {
         // Reload the page
         location.reload();
@@ -9,28 +23,86 @@ const signUpButton = document.querySelector('.register-link');
 
 // Add event listener to the sign-up button
 signUpButton.addEventListener('click', function(event) {
-  // Prevent the default form submission behavior
-  event.preventDefault();
-
-  // Clear the input fields in the login form
+  // Check if the spinner is currently displayed
+  const spinnerContainer = document.getElementById('spinnerContainer');
+  if (spinnerContainer.style.display === 'block') {
+    event.preventDefault(); // Prevent the default behavior of the sign-up button
+    event.stopPropagation(); // Stop the event from propagating to parent elements
+}
+ else {
+  
+ /* // Clear the input fields in the login form || Reset input onclick signup text  
   const loginEmailInput = document.getElementById('emailInput');
   const loginPasswordInput = document.getElementById('pswInput');
   loginEmailInput.value = '';
-  loginPasswordInput.value = '';
+  loginPasswordInput.value = '';  */
+  
+  
+  // Clear the input fields in the login form or reset input onclick signup text
 
-  // Reset the styles of email and password input boxes
+    const loginEmailInput = document.getElementById('emailInput');
+    const loginPasswordInput = document.getElementById('pswInput');
+    loginEmailInput.value = '';
+    loginPasswordInput.value = '';
+
+
+// Clear the input fields in the sign-up form or reset input onclick login text
+
+    const signUpUsernameInput = document.getElementById('usernameInput');
+    const signUpEmailInput = document.getElementById('registerEmailInput');
+    const signUpPasswordInput = document.getElementById('registerPswInput');
+    signUpUsernameInput.value = '';
+    signUpEmailInput.value = '';
+    signUpPasswordInput.value = '';
+
+
+  
+  
+
+
+  // login & sign up  Reset the styles of red icon  boxes
+  const inputBoxUsername = document.querySelector('.input-box-username');
+  
   const emailInputBox = document.querySelector('.input-box');
+  const inputBoxEmail = document.querySelector('.input-box-email');
+  
   const passwordInputBox = document.querySelector('.input-box-password');
-  emailInputBox.classList.remove('valid', 'invalid');
-  passwordInputBox.classList.remove('valid', 'invalid');
+  const inputBoxPassword = document.querySelector('.form-box.register .input-box-password');
 
-  // Reset the styles of email and password icons
+  inputBoxUsername.classList.remove('valid', 'invalid');
+
+  emailInputBox.classList.remove('valid', 'invalid');
+  inputBoxEmail.classList.remove('valid', 'invalid');
+  
+  passwordInputBox.classList.remove('valid', 'invalid');
+  inputBoxPassword.classList.remove('valid', 'invalid');
+  
+
+  // login & signup Reset the styles of username email and password icons when switching in between 
+  
+  const usernameIcon = document.getElementById('usernameIcon');
+
+  
+  
   const emailIcon = document.getElementById('emailIcon');
+  const registerEmailIcon = document.getElementById('registerEmailIcon');
+  
   const passwordIcon1 = document.getElementById('hide1');
   const passwordIcon2 = document.getElementById('hide2');
+  const registerPasswordIcon1 = document.getElementById('registerHide1');
+  const registerPasswordIcon2 = document.getElementById('registerHide2');
+  
+  usernameIcon.style.color = '';
+  
   emailIcon.style.color = '';
+  
+  registerEmailIcon.style.color = '';
+  
   passwordIcon1.style.color = '';
   passwordIcon2.style.color = '';
+  
+  registerPasswordIcon1.style.color = '';
+  registerPasswordIcon2.style.color = '';
 
   // Reset the styles of email and password labels
   const emailLabel = document.querySelector('.input-box label[for="email"]');
@@ -40,7 +112,7 @@ signUpButton.addEventListener('click', function(event) {
   
   // Reload the page after clearing the input fields
   
-});
+}});
 
     
 // red email  validation 
@@ -58,6 +130,23 @@ const isValidEmail = emailPattern.test(emailInput.value);
  inputBox.classList.remove('invalid', 'valid');
   inputBox.classList.add(isValidEmail ? 'valid' : 'invalid');
  }; 
+
+
+
+//  red  lock validation
+const passwordInput = document.getElementById('pswInput');
+const passwordIcon = document.getElementById('hide1');  
+const passwordIconHidden = document.getElementById('hide2'); 
+const inputBoxPassword = document.querySelector('.input-box-password')
+passwordInput.addEventListener('input', validatePassword);
+
+function validatePassword() {
+const passwordPattern = /^$|^.{8,}$/;
+  const isValidPassword = passwordPattern.test(passwordInput.value);
+
+  inputBoxPassword.classList.remove('invalid', 'valid');
+  inputBoxPassword.classList.add(isValidPassword ? 'valid' : 'invalid');
+  };
 
 // login form lock icon hide & show 
 function myFunction() {
@@ -83,68 +172,61 @@ z.style.display = "block";
 }
 
 
-//  red  lock validation
-const passwordInput = document.getElementById('pswInput');
-const passwordIcon = document.getElementById('hide1');  
-const passwordIconHidden = document.getElementById('hide2'); 
-const inputBoxPassword = document.querySelector('.input-box-password')
-passwordInput.addEventListener('input', validatePassword);
-
-function validatePassword() {
-const passwordPattern = /^$|^.{8,}$/;
-  const isValidPassword = passwordPattern.test(passwordInput.value);
-
-  inputBoxPassword.classList.remove('invalid', 'valid');
-  inputBoxPassword.classList.add(isValidPassword ? 'valid' : 'invalid');
-  };
-
 
 // user output || red-box & empty input valid 
-const scriptURL = 'https://script.google.com/macros/s/AKfycbwjcVDRp8kWq-Obl9SwDhsBD_yuSg5fYen_DES7SJZ3YK4xTuxXFJGAfyIMtmcYhjCv/exec'
-const form = document.forms['login-register-form']
+const scriptURL = 'https://script.google.com/macros/s/AKfycbwjcVDRp8kWq-Obl9SwDhsBD_yuSg5fYen_DES7SJZ3YK4xTuxXFJGAfyIMtmcYhjCv/exec';
+const form = document.forms['login-register-form'];
+const spinnerContainer = document.getElementById('spinnerContainer'); 
+const loginButton = document.querySelector('.btnlogin-popup');
+
+// Assuming spinner element is added to the HTML
 
 form.addEventListener('submit', e => {
   e.preventDefault();
+  
+  spinnerContainer.style.display = 'none'; // Hide spinner if submission fails
 
-  // logn: Check if email and password are empty
   const emailInput = form.elements['emailInput'];
-    const passwordInput = form.elements['pswInput'];
+  const passwordInput = form.elements['pswInput'];
+  const loginButton = document.getElementById('loginButton'); // Get a reference to the login button
+  const loginText = document.getElementById('loginText'); // Get a reference to the login text span
 
-  if (emailInput.value.trim() === '' ||
-   passwordInput.value.trim() === '') {   // Apply red border
-    emailInput.style.border = '1px solid #FF0000' ;
+  // Check if email and password are empty
+  if (emailInput.value.trim() === '' || passwordInput.value.trim() === '') {
+    // Apply red border
+    emailInput.style.border = '1px solid #FF0000';
     emailInput.style.boxShadow = '0 0 5px  #FF0000';
-    
 
     passwordInput.style.border = '1px solid #FF0000';
     passwordInput.style.boxShadow = '0 0 5px  #FF0000';
-    
 
     // Remove red border after 1 second
     setTimeout(() => {
       emailInput.style.border = '';
       emailInput.style.boxShadow = '';
-      
+
       passwordInput.style.border = '';
       passwordInput.style.boxShadow = '';
-      
+
     }, 1000);
-
-    return; // Stop further execution if validation fails
-   }
-
+    
+    // Do not proceed further
+    return;
+  }
+  
   // Validate email pattern
   const emailPattern = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
   if (!emailPattern.test(emailInput.value)) {
     // Apply red border to invalid email
     emailInput.style.border = '2px solid #FF0000';
-    
+
     // Remove red border after 1 second
     setTimeout(() => {
       emailInput.style.border = '';
     }, 1000);
 
-    return; // Stop further execution if validation fails
+    // Do not proceed further
+    return;
   }
 
   // Validate password length (minimum 8 characters)
@@ -157,36 +239,29 @@ form.addEventListener('submit', e => {
       passwordInput.style.border = '';
     }, 1000);
 
-    return; // Stop further execution if validation fails
- 
-  
+    // Do not proceed further
+    return;
   }
 
+  // Show spinner while processing form submission
+  spinnerContainer.style.display = 'block';
+  loginText.style.display = 'none'; // Hide the login text
+  
   // Proceed with form submission if validation passes
   fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-    .then(response => alert("Submitted Successfully."))
-    .then(() => { window.location.reload(); })
-    .catch(error => console.error('Error!', error.message));
-
-
+    .then(response => {
+      spinnerContainer.style.display = 'none'; // Hide spinner after submission
+      loginText.style.display = 'inline'; // Show the login text
+      alert("Submitted Successfully.");
+      window.location.reload();
+    })
+    .catch(error => {
+      spinnerContainer.style.display = 'none'; // Hide spinner if submission fails
+      loginText.style.display = 'inline'; // Show the login text
+      console.error('Error!', error.message);
+    })
+    
 });
-
-
-
- 
-
-  
-  // user input Data script
-/* const scriptURL = 'https://script.google.com/macros/s/AKfycbx_-SZci_Xm1BAlIAKArfg2ErY9MGhcxgnSjxiGJXee8AxBtT48_WYL2I2MGFqBRIggTQ/exec'
-const form = document.forms['login-form']
-form.addEventListener('submit', e => {
-  e.preventDefault()
-
- fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-    .then(response => alert("Submitted Successfully."))
-    .then(() => { window.location.reload(); })
-    .catch(error => console.error('Error!', error.message))
-}) */
 
 // selecting  of  class  animation & class
 const wrapper = document.querySelector('.wrapper');
@@ -241,7 +316,26 @@ document.addEventListener('click', function(event) {
 
 
 
-//---------------------------------//
+//_-_-_-__-_-_-SIGN UP_-__-_-_-_-_-_//
+
+
+// perfect apepar for signup  loading spinner 
+document.getElementById('signupForm').addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent default form submission
+  
+  
+  
+  // Show the spinner
+  document.getElementById('spinnerSignupcontainer').style.display = 'block';
+  
+  setTimeout(function() {
+    // Hide the spinner after some time (Simulating processing)
+    document.getElementById('spinnerSignupcontainer').style.display = 'none';
+    
+  }, 3000); // Change 2000 to the actual processing time of your form
+});
+
+
 
 // Register usrname validation
 const usernameInput = document.getElementById('usernameInput');
@@ -325,13 +419,22 @@ z.style.display = "block";
 
 // Register form submission
 const registerForm = document.forms['register-form'];
+const spinnerSignupcontainer = document.getElementById('spinnerSignupcontainer'); 
+const signupButton = document.querySelector('.btnlogin-popup');
+
 registerForm.addEventListener('submit', e => {
   e.preventDefault();
+  
+  spinnerSignupcontainer.style.display = 'none'; // Hide spinner if submission fails
 
   // Check if email and password are empty
   const usernameInput = registerForm.elements['usernameInput'];
   const emailInput = registerForm.elements['registerEmailInput'];
   const passwordInput = registerForm.elements['registerPswInput'];
+  
+  const signupButton = document.getElementById('signupButton'); // Get a reference to the login button
+  const signupText = document.getElementById('signupText'); // Get a reference to the login text span
+
 
 if (usernameInput.value.trim() === '' ||
     emailInput.value.trim() === '' || passwordInput.value.trim() === '') {
@@ -401,9 +504,23 @@ if (usernameInput.value.trim() === '' ||
     return; // Stop further execution if validation fails
   }
 
+  // Show spinner while processing form submission
+  spinnerSignupcontainer.style.display = 'block';
+  signupText.style.display = 'none'; // Hide the login text
   // Proceed with form submission if validation passes
+  
   fetch(scriptURL, { method: 'POST', body: new FormData(registerForm) })
-    .then(response => alert("Submitted Successfull."))
-    .then(() => { window.location.reload(); })
-    .catch(error => console.error('Error!', error.message));
+    .then(response => {
+      spinnerSignupcontainer.style.display = 'none'; // Hide spinner after submission
+      signupText.style.display = 'inline'; // Show the login text
+ alert("Submitted Successfull.");
+    window.location.reload(); 
+    })
+    .catch(error =>{ 
+      spinnerSignupcontainer.style.display = 'none'; // Hide spinner if submission fails
+      signupText.style.display = 'inline'; // Show the login text
+      console.error('Error!', error.message);
+  });
 });
+
+ 
