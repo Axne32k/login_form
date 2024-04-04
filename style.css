@@ -311,7 +311,7 @@ h2 svg {
 
 .input-box input::selection {
   color: #FFFFFF;
-  background-color: #376083;
+  background-color: #1C7ECA;
 }
 
 #emailIcon {
@@ -400,6 +400,7 @@ h2 svg {
   margin: -15px 0 15px;
   display: flex;
   justify-content: space-between;
+  user-select: none;
 }
 
 .remember-forget label input {
@@ -412,12 +413,16 @@ h2 svg {
 .remember-forget a {
   text-decoration: none;
   color: #162938;
+  user-select: none;
 }
 
 .remember-forget a:hover {
   text-decoration: underline;
-  color: #000000;
+  color: #350B94;
+  user-select: none;
 }
+
+
 
 .btn {
   width: 100%;

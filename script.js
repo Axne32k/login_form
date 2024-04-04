@@ -518,3 +518,9 @@ registerForm.addEventListener('submit', e => {
       console.error('Error!', error.message);
     });
 });
+
+
+
+document.getElementById("underlineFrgtpsw").addEventListener("click", function() {
+  this.classList.add("clicked");
+});
