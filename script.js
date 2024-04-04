@@ -520,7 +520,3 @@ registerForm.addEventListener('submit', e => {
 });
 
 
-
-document.getElementById("underlineFrgtpsw").addEventListener("click", function() {
-  this.classList.add("clicked");
-});

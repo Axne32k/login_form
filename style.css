@@ -413,13 +413,11 @@ h2 svg {
 .remember-forget a {
   text-decoration: none;
   color: #162938;
-  user-select: none;
 }
 
 .remember-forget a:hover {
   text-decoration: underline;
   color: #350B94;
-  user-select: none;
 }
 
 
