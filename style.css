@@ -310,8 +310,8 @@ h2 svg {
 }
 
 .input-box input::selection {
-  color: #FFFFFF;
-  background-color: #1C7ECA;
+  color: #000000;
+  background-color: #86B6DB;
 }
 
 #emailIcon {
