@@ -1,3 +1,7 @@
+
+
+
+
 // perfect apepar for login  loading spinner
 document.getElementById('myForm').addEventListener('submit', function(event) {
   event.preventDefault(); // Prevent default form submission
