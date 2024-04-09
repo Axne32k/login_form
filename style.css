@@ -1,20 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
-/* Roboto Mono*/
-@import url('https://fonts.googleapis.com/css2?family=Metal+Mania&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
-
 /* outfit */
 
 @import url('https://fonts.googleapis.com/css2?family=Metal+Mania&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 
-/* metal  */
-@import url('https://fonts.googleapis.com/css2?family=Metal+Mania&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 
 /* Nosifer */
 @import url('https://fonts.googleapis.com/css2?family=Changa:wght@200..800&family=Mate+SC&family=Metal+Mania&family=Nosifer&family=Outfit:wght@100..900&family=Patua+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Rowdies:wght@300;400;700&display=swap');
-
-/* bagel fat one  */
-@import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Changa:wght@200..800&family=Mate+SC&family=Metal+Mania&family=Nosifer&family=Outfit:wght@100..900&family=Patua+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Rubik+Bubbles&family=Rubik+Dirt&family=Skranji:wght@400;700&display=swap');
 
 
 
@@ -25,12 +15,12 @@
 }
 
 body {
-  font-family: sans-serif;
   display: flex;
   justify-content: center;
   overflow: auto;
   align-items: center;
   min-height: 100vh;
+  font-family: 'outfit', sans-serif;
   background-image: url('/IMG_20231224_012921.jpg');
   background-size: cover;
   background-repeat: no-repeat;
@@ -98,6 +88,14 @@ h2 svg {
   width: 70px;
 }
 
+.txtLogin {
+  text-align: center;
+  font-family: 'outfit', sans-serif;
+  font-weight: 700;
+  font-size: 1.5em;
+  user-select: none;
+}
+
 .axne {
   font-size: 18px;
   font-weight: 900;
@@ -146,6 +144,7 @@ h2 svg {
   font-weight: 500;
   margin-left: 10px;
   transition: .1s;
+  font-family: 'outfit', sans-serif;
 }
 
 .btnlogin-popup:hover {
@@ -156,7 +155,7 @@ h2 svg {
 .wrapper {
   position: relative;
   width: 320px;
-  height: 440px;
+  height: 470px;
   background: transparent;
   border: 2px solid rgba(225, 225, 225, .5);
   border-radius: 16px;
@@ -176,7 +175,7 @@ h2 svg {
 
 
 .wrapper.active {
-  height: 450px;
+  height: 470px;
 }
 
 .wrapper .form-box {
@@ -259,7 +258,6 @@ h2 svg {
   position: absolute;
   top: 55%;
   left: 5px;
-  font-family: "Outfit", sans-serif;
   font-weight: 900;
   font-optical-sizing: auto;
   font-style: normal;
@@ -431,9 +429,10 @@ h2 svg {
   outline: none;
   cursor: pointer;
   font-size: 1.1em;
+  font-variant: small-caps;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: white;
   font-weight: 600;
-  font-variant: small-caps;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
