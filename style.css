@@ -176,7 +176,7 @@ h2 svg {
 
 
 .wrapper.active {
-  height: 500px;
+  height: 450px;
 }
 
 .wrapper .form-box {
@@ -510,14 +510,6 @@ h2 svg {
 
 /*----------register---------*/
 
-.input-box-username.invalid #usernameIcon {
-  color: #FF0000;
-}
-
-
-.input-box-username.valid #usernameIcon {
-  color: #000000;
-}
 
 
 .input-box-email.invalid #registerEmailIcon {

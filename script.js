@@ -46,10 +46,8 @@ signUpButton.addEventListener('click', function(event) {
 
     // Clear the input fields in the sign-up form or reset input onclick login text
 
-    const signUpUsernameInput = document.getElementById('usernameInput');
     const signUpEmailInput = document.getElementById('registerEmailInput');
     const signUpPasswordInput = document.getElementById('registerPswInput');
-    signUpUsernameInput.value = '';
     signUpEmailInput.value = '';
     signUpPasswordInput.value = '';
 
@@ -59,15 +57,12 @@ signUpButton.addEventListener('click', function(event) {
 
 
     // login & sign up  Reset the styles of red icon  boxes
-    const inputBoxUsername = document.querySelector('.input-box-username');
 
     const emailInputBox = document.querySelector('.input-box');
     const inputBoxEmail = document.querySelector('.input-box-email');
 
     const passwordInputBox = document.querySelector('.input-box-password');
     const inputBoxPassword = document.querySelector('.form-box.register .input-box-password');
-
-    inputBoxUsername.classList.remove('valid', 'invalid');
 
     emailInputBox.classList.remove('valid', 'invalid');
     inputBoxEmail.classList.remove('valid', 'invalid');
@@ -76,9 +71,8 @@ signUpButton.addEventListener('click', function(event) {
     inputBoxPassword.classList.remove('valid', 'invalid');
 
 
-    // login & signup Reset the styles of username email and password icons when switching in between 
+    // login & signup Reset the styles of  email and password icons when switching in between 
 
-    const usernameIcon = document.getElementById('usernameIcon');
 
 
 
@@ -90,7 +84,6 @@ signUpButton.addEventListener('click', function(event) {
     const registerPasswordIcon1 = document.getElementById('registerHide1');
     const registerPasswordIcon2 = document.getElementById('registerHide2');
 
-    usernameIcon.style.color = '';
 
     emailIcon.style.color = '';
 
@@ -337,22 +330,6 @@ document.getElementById('signupForm').addEventListener('submit', function(event)
 });
 
 
-
-// Register usrname validation
-const usernameInput = document.getElementById('usernameInput');
-const usernameIcon = document.getElementById('usernameIcon');
-const inputBoxUsername = document.querySelector('.input-box-username');
-
-usernameInput.addEventListener('input', validateRegisterUsername);
-
-function validateRegisterUsername() {
-  const usernamePattern = /^$|^(?=.*[a-zA-Z])(?=.*\d)[A-Za-z\d ]{8,16}$/;
-  const isValidUsername = usernamePattern.test(usernameInput.value);
-
-  inputBoxUsername.classList.remove('invalid', 'valid');
-  inputBoxUsername.classList.add(isValidUsername ? 'valid' : 'invalid');
-}
-
 // Register email validation
 const registerEmailInput = document.getElementById('registerEmailInput');
 const registerEmailIcon = document.getElementById('registerEmailIcon');
@@ -428,7 +405,6 @@ registerForm.addEventListener('submit', e => {
   spinnerSignupcontainer.style.display = 'none'; // Hide spinner if submission fails
 
   // Check if email and password are empty
-  const usernameInput = registerForm.elements['usernameInput'];
   const emailInput = registerForm.elements['registerEmailInput'];
   const passwordInput = registerForm.elements['registerPswInput'];
 
@@ -436,10 +412,7 @@ registerForm.addEventListener('submit', e => {
   const signupText = document.getElementById('signupText'); // Get a reference to the login text span
 
 
-  if (usernameInput.value.trim() === '' ||
-    emailInput.value.trim() === '' || passwordInput.value.trim() === '') {
-    usernameInput.style.border = '1px solid #FF0000';
-    usernameInput.style.boxShadow = '0 0 5px #FF0000';
+  if (emailInput.value.trim() === '' || passwordInput.value.trim() === '') {
 
     emailInput.style.border = '1px solid #FF0000';
     emailInput.style.boxShadow = '0 0 5px #FF0000';
@@ -449,9 +422,6 @@ registerForm.addEventListener('submit', e => {
 
     // Remove red border after 1 second
     setTimeout(() => {
-      usernameInput.style.border = '';
-      usernameInput.style.boxShadow = '';
-
       emailInput.style.border = '';
       emailInput.style.boxShadow = '';
 
@@ -462,20 +432,6 @@ registerForm.addEventListener('submit', e => {
     return; // Stop further execution if validation fails
   }
 
-  // Validate email pattern
-  const usernamePattern = /^$|^(?=.*[a-zA-Z])(?=.*\d)[A-Za-z\d ]{8,16}$/;
-
-  if (!usernamePattern.test(usernameInput.value)) {
-    // Apply red border to invalid email
-    usernameInput.style.border = '2px solid #FF0000';
-
-    // Remove red border after 1 second
-    setTimeout(() => {
-      usernameInput.style.border = '';
-    }, 1000);
-
-    return; // Stop further execution if validation fails
-  }
 
   // Validate email pattern
   const emailPattern = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
