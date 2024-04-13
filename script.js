@@ -1,4 +1,3 @@
-
 // perfect apepar for login  loading spinner
 document.getElementById('myForm').addEventListener('submit', function(event) {
   event.preventDefault(); // Prevent default form submission
@@ -163,6 +162,23 @@ function myFunction() {
 
 
 
+// Proceed with form submission if validation passes
+document.addEventListener("DOMContentLoaded", function() {
+  const dialog = document.getElementById("dialog");
+
+  // Function to show the dialog message
+  function showDialog() {
+    dialog.style.display = "block";
+    // Automatically hide the dialog after 3 seconds
+    setTimeout(function() {
+      dialog.style.display = "none";
+      location.reload(); // Reload the page
+    }, 2000);
+  }
+})
+
+
+
 // user output || red-box & empty input valid 
 const scriptURL = 'https://script.google.com/macros/s/AKfycbwjcVDRp8kWq-Obl9SwDhsBD_yuSg5fYen_DES7SJZ3YK4xTuxXFJGAfyIMtmcYhjCv/exec';
 const form = document.forms['login-register-form'];
@@ -237,13 +253,25 @@ form.addEventListener('submit', e => {
   spinnerContainer.style.display = 'block';
   loginText.style.display = 'none'; // Hide the login text
 
+  // Function to show the dialog message
+  function showDialog() {
+    dialog.style.display = "flex";
+    // Automatically hide the dialog after 2 seconds
+    setTimeout(function() {
+      dialog.style.display = "none";
+      location.reload(); // Reload the page
+    }, 4000);
+  }
+
+
+
+
   // Proceed with form submission if validation passes
   fetch(scriptURL, { method: 'POST', body: new FormData(form) })
     .then(response => {
       spinnerContainer.style.display = 'none'; // Hide spinner after submission
       loginText.style.display = 'inline'; // Show the login text
-      alert("Submitted Successfully.");
-      window.location.reload();
+      showDialog(); // Show the dialog message
     })
     .catch(error => {
       spinnerContainer.style.display = 'none'; // Hide spinner if submission fails
@@ -387,6 +415,23 @@ function registerLock() {
 }
 
 
+// Proceed with form submission if validation passes
+document.addEventListener("DOMContentLoaded", function() {
+  const dialogbox = document.getElementById("dialogbox");
+
+  // Function to show the dialog message
+  function showDialog() {
+    dialogbox.style.display = "block";
+    // Automatically hide the dialog after 3 seconds
+    setTimeout(function() {
+      dialogbox.style.display = "none";
+      location.reload(); // Reload the page
+    }, 2000);
+  }
+})
+
+
+
 
 // user output || red-box & empty input valid 
 
@@ -460,14 +505,26 @@ registerForm.addEventListener('submit', e => {
   // Show spinner while processing form submission
   spinnerSignupcontainer.style.display = 'block';
   signupText.style.display = 'none'; // Hide the login text
-  // Proceed with form submission if validation passes
 
+  // Function to show the dialog message 
+  function showDialog() {
+    dialogbox.style.display = "flex";
+    // Automatically hide the dialog after 2 seconds
+    setTimeout(function() {
+      dialogbox.style.display = "none";
+      location.reload(); // Reload the page
+    }, 2000);
+  }
+
+
+
+
+  // Proceed with form submission if validation passes
   fetch(scriptURL, { method: 'POST', body: new FormData(registerForm) })
     .then(response => {
       spinnerSignupcontainer.style.display = 'none'; // Hide spinner after submission
       signupText.style.display = 'inline'; // Show the login text
-      alert("Submitted Successfull.");
-      window.location.reload();
+      showDialog(); // Show the dialog message
     })
     .catch(error => {
       spinnerSignupcontainer.style.display = 'none'; // Hide spinner if submission fails
@@ -475,5 +532,3 @@ registerForm.addEventListener('submit', e => {
       console.error('Error!', error.message);
     });
 });
-
-

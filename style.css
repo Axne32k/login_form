@@ -1,12 +1,8 @@
 /* outfit */
-
 @import url('https://fonts.googleapis.com/css2?family=Metal+Mania&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
-
 
 /* Nosifer */
 @import url('https://fonts.googleapis.com/css2?family=Changa:wght@200..800&family=Mate+SC&family=Metal+Mania&family=Nosifer&family=Outfit:wght@100..900&family=Patua+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Rowdies:wght@300;400;700&display=swap');
-
-
 
 * {
   margin: 0;
@@ -21,7 +17,7 @@ body {
   align-items: center;
   min-height: 100vh;
   font-family: 'outfit', sans-serif;
-  background-image: url('/IMG_20231224_012921.jpg');
+  background-image: url('/image/IMG_20231224_012921.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -37,7 +33,6 @@ body {
   clip: rect(0, 0, 0, 0);
   border: 0;
 }
-
 
 /* Media query for tablets */
 @media only screen and (max-width: 768px) {
@@ -75,17 +70,19 @@ header {
   z-index: 99
 }
 
-h1 {
+header h1 {
   font-family: 'Nosifer', sans-serif;
   font-size: 1em;
 }
 
-
-h2 svg {
+svg {
   user-select: none;
   text-shadow: 2px 2px 4px #ffffff;
   height: 70px;
-  width: 70px;
+  width: 100%;
+  font-size: 2em;
+  color: #162938;
+  text-align: center;
 }
 
 .txtLogin {
@@ -231,12 +228,6 @@ h2 svg {
 .wrapper .icon-close:focus {
   color: #162938;
   cursor: pointer;
-}
-
-.form-box h2 {
-  font-size: 2em;
-  color: #162938;
-  text-align: center;
 }
 
 .input-box {
@@ -418,8 +409,6 @@ h2 svg {
   color: #350B94;
 }
 
-
-
 .btn {
   width: 100%;
   height: 45px;
@@ -438,8 +427,6 @@ h2 svg {
   -ms-user-select: none;
   user-select: none;
 }
-
-
 
 .login-register {
   font-size: .9em;
@@ -465,7 +452,6 @@ h2 svg {
   text-decoration: underline;
   color: #040E7A;
 }
-
 
 .spinner {
   border: 4px solid rgba(0, 0, 0, 0.1);
@@ -495,8 +481,6 @@ h2 svg {
   position: relative;
 }
 
-
-
 .hidden-text {
   position: relative;
   /* Make the button relative so we can position the loading spinner */
@@ -507,29 +491,70 @@ h2 svg {
   /* Initially show the login text */
 }
 
+.dialog-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0 25px 60px;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+
+}
+
+.aproved-right {
+  position: relative;
+  height: 100%;
+  width: 45%;
+  top: -30px;
+  user-select: none;
+
+}
+
+.dialog h1 {
+  position: absolute;
+  top: 320px;
+  left: 114px;
+  color: #162938;
+  text-shadow: 1px 1px 1px #000000;
+  font-family: sans-serif;
+  font-size: 2em;
+  user-select: none;
+
+}
+
+.dialog {
+  font-weight: 500;
+  background: #E0EDFF;
+  padding: 30px;
+  border-radius: 8px;
+  text-align: center;
+  text-transform: capitalize;
+  color: #545454;
+  user-select: none;
+}
+
 /*----------register---------*/
-
-
 
 .input-box-email.invalid #registerEmailIcon {
   color: #FF0000;
 }
 
-
 .input-box-email.valid #registerEmailIcon {
   color: #000000;
 }
-
 
 .form-box.register .input-box-password.invalid .icon {
   color: #FF0000;
 }
 
-
 .form-box.register .input-box-password.valid .icon {
   color: #000000;
 }
-
 
 .spinnerSignup {
   border: 4px solid rgba(0, 0, 0, 0.1);
@@ -559,8 +584,6 @@ h2 svg {
   position: relative;
 }
 
-
-
 .hiddenSignup-text {
   position: relative;
   /* Make the button relative so we can position the loading spinner */
@@ -569,4 +592,28 @@ h2 svg {
 #signupText {
   display: inline;
   /* Initially show the login text */
+}
+
+.dialogbox h1 {
+  position: absolute;
+  top: 320px;
+  left: 114px;
+  color: #162938;
+  text-shadow: 1px 1px 1px #000000;
+  font-family: sans-serif;
+  font-size: 2em;
+  user-select: none;
+}
+
+.dialogbox {
+  position: '';
+  font-weight: 500;
+  background: #E0EDFF;
+  padding: 30px;
+  border-radius: 8px;
+  text-align: center;
+  text-transform: capitalize;
+  color: #545454;
+  user-select: none;
+
 }
