@@ -267,9 +267,10 @@ svg {
 }
 
 .input-box input:focus+label {
-  margin-top: -25px;
-  background-color: #98B3C8F2;
+  margin-top: -18px;
+  background-color: transparent;
   color: #162938;
+  transform: translateY(-90%) scale(0);
 
 }
 
@@ -279,9 +280,11 @@ svg {
 }
 
 .input-box input:not([value=""])+label {
-  margin-top: -25px;
-  background-color: #98B3C8F2;
+  margin-top: -18px;
+  background-color: transparent;
   color: #162938;
+  transform: translateY(-90%) scale(0);
+
 }
 
 .input-box input {
