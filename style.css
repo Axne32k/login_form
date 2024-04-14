@@ -502,7 +502,7 @@ svg {
   height: 100%;
   padding: 0 25px 60px;
   background-color: rgba(0, 0, 0, 0.7);
-  display: none;
+  display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1;
@@ -536,7 +536,6 @@ svg {
   padding: 30px;
   border-radius: 8px;
   text-align: center;
-  text-transform: capitalize;
   color: #545454;
   user-select: none;
 }
@@ -615,7 +614,6 @@ svg {
   padding: 30px;
   border-radius: 8px;
   text-align: center;
-  text-transform: capitalize;
   color: #545454;
   user-select: none;
 
