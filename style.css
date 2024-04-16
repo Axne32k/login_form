@@ -212,19 +212,14 @@ svg {
   right: 4px;
   width: 35px;
   height: 35px;
-  font-size: 20px;
-  font-weight: 900;
-  color: #FFFFFF;
+  padding: 5px;
+  font-size: 2.1em;
+  color: #162938;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #162938;
-  border-top-right-radius: 12px;
-  border-bottom-left-radius: 12px;
-  -webkit-text-stroke-width: 1px;
+  text-shadow: 1px 1px 3px  #FFFFFF;
   cursor: pointer;
-  text-shadow: 2px 2px 4px #FFFFFF;
-  box-shadow: 2px 3px 4px #FFFFFF;
   z-index: 1;
 }
 
@@ -314,7 +309,7 @@ svg {
   position: absolute;
   top: -3px;
   right: 9px;
-  font-size: 1.3em;
+  font-size: 1.4em;
   color: #162938;
   line-height: 65px;
   text-transform: uppercase;
@@ -332,14 +327,14 @@ svg {
 
 .input-box .icon {
   position: absolute;
-  top: -3px;
-  right: 9px;
-  font-size: 1.3em;
-  color: #162938;
+  top: -13px;
+  right: -1px;
+  font-size: 1.4em;     
+  color: #162938; 
   line-height: 65px;
-  text-transform: uppercase;
+  padding: 10px;
   text-shadow: 2px 2px 4px #ffffff;
-  animation: bounce 1s 1, fade 1s ease-in-out 1;
+  animation: bounce 2s 1, fade 1s ease-in-out 1;
 }
 
 .input-box.invalid .icon {
@@ -357,7 +352,7 @@ svg {
   background-color: white;
   border-radius: 30%;
   top: 54%;
-  right: 8px;
+  right: 19px;
 }
 
 .hole2 {
@@ -367,7 +362,7 @@ svg {
   background-color: white;
   border-radius: 50%;
   top: 51%;
-  right: 7px;
+  right: 18px;
 }
 
 @keyframes bounce {
